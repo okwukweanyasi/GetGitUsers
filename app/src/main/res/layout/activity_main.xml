@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/swipeContainer"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#eed177"
+        android:id="@+id/recycler_scroll">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/topbar">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:layout_alignParentTop="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff"
+                        android:text="@string/str_total_users"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:paddingLeft="5dp"/>
+
+                    <TextView
+                        android:id="@+id/total_users"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        tools:text="0"
+                        android:textColor="#fff"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/first"
+                        android:layout_width="43dp"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:onClick="moveFirst"
+                        android:background="#ffdd77"
+                        android:textColor="#fff"
+                        android:layout_marginRight="3dp"
+                        android:text="&lt;&lt;"/>
+
+                    <Button
+                        android:id="@+id/prev"
+                        android:layout_width="43dp"
+                        android:layout_height="wrap_content"
+                        android:text="&lt;"
+                        android:paddingRight="5dp"
+                        android:onClick="movePrev"
+                        android:background="#ffdd77"
+                        android:textColor="#fff"
+                        android:paddingLeft="5dp"
+                        />
+                    <EditText
+                        android:id="@+id/this_page"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:text="1"
+                        android:inputType="numberDecimal"
+                        android:textColor="#fff"
+                        android:textSize="15sp"
+                        android:background="#eed177"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/next"
+                        android:layout_width="43dp"
+                        android:layout_height="wrap_content"
+                        android:text="&gt;"
+                        android:background="#ffdd77"
+                        android:textColor="#fff"
+                        android:layout_marginRight="3dp"
+                        android:onClick="moveNext"
+                        android:paddingRight="5dp"
+                        android:paddingLeft="5dp"
+                        />
+                    <Button
+                        android:id="@+id/last"
+                        android:layout_width="43dp"
+                        android:layout_height="wrap_content"
+                        android:text="&gt;&gt;"
+                        android:onClick="moveLast"
+                        android:background="#ffdd77"
+                        android:textColor="#fff"
+                        android:paddingRight="5dp"
+                        android:paddingLeft="5dp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/page_results"
+                        android:textColor="#fff"
+                        tools:text="Results"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:paddingLeft="8dp"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:showIn="@layout/activity_main"
+                android:background="#ff0"
+                android:layout_below="@id/topbar"
+                tools:context=".controller.MainActivity"
+                android:nestedScrollingEnabled="false"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/recyclerView"
+                android:id="@+id/no_connection"
+                android:visibility="gone">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:textColor="#fff"
+                    android:background="#ffdd77"
+                    android:id="@+id/disconnected"
+                    android:text="@string/internet"
+                    android:textStyle="bold"
+                    android:textSize="30sp"/>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="#a0af10"
+                    android:textColor="#fff"
+                    android:id="@+id/retry"
+                    android:text="@string/str_retry"
+                    android:onClick="refreshMain"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+
+</android.support.v4.widget.SwipeRefreshLayout>

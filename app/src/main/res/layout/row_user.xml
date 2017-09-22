@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:id="@+id/row_card_view"
+    card_view:cardCornerRadius="30dp"
+    card_view:cardBackgroundColor="#B2BABE"
+    android:elevation="60dp"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <RelativeLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B2BABE">
+
+        <FrameLayout
+            android:id="@+id/frame"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/cover"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside" />
+
+            <ImageView
+                android:id="@+id/circle_crop"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_alignEnd="@+id/main"
+                android:layout_alignLeft="@+id/cover"
+                android:layout_alignRight="@+id/cover"
+                android:layout_alignStart="@+id/main"
+                android:scaleType="fitXY"
+                android:src="@drawable/circle_crop" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/frame"
+            android:text="Username"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/githublink1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/frame"
+            android:text="GithubLink"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

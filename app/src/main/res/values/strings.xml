@@ -1,0 +1,19 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Github Users</string>
+
+    <!--layout strings-->
+    <string name="internet">Please check your internet connection</string>
+    <string name="str_first">"&lt;&lt;"</string>
+    <string name="str_total_users">Total Users: </string>
+    <string name="str_retry">Retry</string>
+
+    <!--Main Activity-->
+    <string name="err_fetch_data">Error retrieving data!</string>
+    <string name="retr_github_data">Retrieving Github Users</string>
+    <string name="retr_github_user_data">Retrieving Github User <xliff:g id="name" example="Amy">%s </xliff:g> Data</string>
+    <string name="git_users_refreshd">Github Users Refreshed</string>
+
+    <string name="intro">Name: <xliff:g id="name" example="Amy">%s </xliff:g> the genius \n</string>
+
+    <string name="result_pane">Results: <xliff:g id="_first">%d </xliff:g> - <xliff:g id="_second">%d </xliff:g> of <xliff:g id="_last">%d </xliff:g></string>
+</resources>
